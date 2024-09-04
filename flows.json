@@ -1,0 +1,601 @@
+[
+    {
+        "id": "79b757b64bf43b29",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5fc8b78345655151",
+        "type": "serial-port",
+        "serialport": "COM11",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "500"
+    },
+    {
+        "id": "9daed0507e61c20f",
+        "type": "ui_tab",
+        "name": "Tab1",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b0c5a67af0b6fcfa",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "2b6e3f844a78f791",
+        "type": "ui_group",
+        "name": "Info",
+        "tab": "9daed0507e61c20f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d161590ee7303fb9",
+        "type": "ui_group",
+        "name": "Temperatures",
+        "tab": "9daed0507e61c20f",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0d7c8df638a20bf5",
+        "type": "serial in",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "serial": "5fc8b78345655151",
+        "x": 770,
+        "y": 320,
+        "wires": [
+            [
+                "ad5d94d98f23389a",
+                "ac1fb339800aa670",
+                "f98324609927bffa",
+                "17a1d40b1ab1dd84",
+                "8a4259ecd6af6d98",
+                "179a8aff82e9c5e8"
+            ]
+        ]
+    },
+    {
+        "id": "ad5d94d98f23389a",
+        "type": "split",
+        "z": "79b757b64bf43b29",
+        "name": "Ta split",
+        "splt": "Ta",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1040,
+        "y": 300,
+        "wires": [
+            [
+                "64917e6bb0221e7d"
+            ]
+        ]
+    },
+    {
+        "id": "ac1fb339800aa670",
+        "type": "split",
+        "z": "79b757b64bf43b29",
+        "name": "Tb split",
+        "splt": "Tb",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1040,
+        "y": 360,
+        "wires": [
+            [
+                "d2abcccfb9185ff7"
+            ]
+        ]
+    },
+    {
+        "id": "f98324609927bffa",
+        "type": "split",
+        "z": "79b757b64bf43b29",
+        "name": "PP split",
+        "splt": "PP",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1040,
+        "y": 420,
+        "wires": [
+            [
+                "810fc2c584aa6f12"
+            ]
+        ]
+    },
+    {
+        "id": "17a1d40b1ab1dd84",
+        "type": "split",
+        "z": "79b757b64bf43b29",
+        "name": "AA split",
+        "splt": "AA",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1040,
+        "y": 480,
+        "wires": [
+            [
+                "e669f20bf1916a09"
+            ]
+        ]
+    },
+    {
+        "id": "810fc2c584aa6f12",
+        "type": "ui_gauge",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "group": "2b6e3f844a78f791",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Percent-Power",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1220,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e669f20bf1916a09",
+        "type": "ui_slider",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "label": "Alarm Status",
+        "tooltip": "",
+        "group": "2b6e3f844a78f791",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1",
+        "step": 1,
+        "className": "",
+        "x": 1210,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a4259ecd6af6d98",
+        "type": "split",
+        "z": "79b757b64bf43b29",
+        "name": "CC split",
+        "splt": "C",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1040,
+        "y": 540,
+        "wires": [
+            [
+                "39b1da69ff1e982e"
+            ]
+        ]
+    },
+    {
+        "id": "39b1da69ff1e982e",
+        "type": "ui_slider",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "label": "Cover Status",
+        "tooltip": "",
+        "group": "2b6e3f844a78f791",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1",
+        "step": 1,
+        "className": "",
+        "x": 1210,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b575786637432fbe",
+        "type": "ui_chart",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "group": "d161590ee7303fb9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "ThD",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "200",
+        "ymax": "400",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1410,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "64917e6bb0221e7d",
+        "type": "ui_chart",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "group": "d161590ee7303fb9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "ThA",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "200",
+        "ymax": "400",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2abcccfb9185ff7",
+        "type": "ui_chart",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "group": "d161590ee7303fb9",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "ThB",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "200",
+        "ymax": "400",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5426fb0daca963ac",
+        "type": "ui_slider",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "label": "Kp",
+        "tooltip": "",
+        "group": "2b6e3f844a78f791",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "2",
+        "max": "20",
+        "step": 1,
+        "className": "",
+        "x": 1050,
+        "y": 180,
+        "wires": [
+            [
+                "5ef06b05db05ad7e"
+            ]
+        ]
+    },
+    {
+        "id": "e8aa89bbab76f468",
+        "type": "serial out",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "serial": "5fc8b78345655151",
+        "x": 1540,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5ef06b05db05ad7e",
+        "type": "function",
+        "z": "79b757b64bf43b29",
+        "name": "Kp function",
+        "func": "return { payload: \"(\".concat(msg.payload, \")p\") };\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 180,
+        "wires": [
+            [
+                "e8aa89bbab76f468"
+            ]
+        ]
+    },
+    {
+        "id": "179a8aff82e9c5e8",
+        "type": "split",
+        "z": "79b757b64bf43b29",
+        "name": "Td Split",
+        "splt": "Td",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1060,
+        "y": 120,
+        "wires": [
+            [
+                "b575786637432fbe"
+            ]
+        ]
+    },
+    {
+        "id": "be446013ed01093a",
+        "type": "ui_slider",
+        "z": "79b757b64bf43b29",
+        "name": "",
+        "label": "ThD ",
+        "tooltip": "",
+        "group": "2b6e3f844a78f791",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "320",
+        "max": "360",
+        "step": "20",
+        "className": "",
+        "x": 1050,
+        "y": 240,
+        "wires": [
+            [
+                "9413b2761f45d70f"
+            ]
+        ]
+    },
+    {
+        "id": "9413b2761f45d70f",
+        "type": "function",
+        "z": "79b757b64bf43b29",
+        "name": "ThD function",
+        "func": "return { payload: \"(\".concat(msg.payload, \")d\") };\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 240,
+        "wires": [
+            [
+                "e8aa89bbab76f468"
+            ]
+        ]
+    }
+]
